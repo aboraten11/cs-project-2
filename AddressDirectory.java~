@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
 
-//test comment
 public class AddressDirectory
 {
   public static void PrintContacts (PrintWriter out, ArrayList<String> familyName, ArrayList<String> streetAddress, ArrayList<String> cityStateZip, ArrayList<String> phoneNumber, ArrayList<String> email)
