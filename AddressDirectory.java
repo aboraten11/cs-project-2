@@ -10,22 +10,30 @@ public class AddressDirectory
   public static void PrintContacts (PrintWriter out, ArrayList<String> familyName, ArrayList<String> streetAddress, ArrayList<String> cityStateZip, ArrayList<String> phoneNumber, ArrayList<String> email)
   {
     int size2 = familyName.size();
-    
-    for (int i = 0; i <= size2; i++)
+    String temp = "";
+    for (int i = 0; i < size2; i++)
     {
-      out.printf(i + 1 + ".Name: " + familyName.get(i));
-      out.println();
-      out.printf("Street Adress: " + streetAddress.get(i));
-      out.println();
-      out.printf(cityStateZip.get(i));
-      out.println();
-      out.printf("Phone Number: " + phoneNumber.get(i));
-      out.println();
-      out.printf("Email: " + email.get(i));
-      out.println();
+      temp = temp + (i + 1) + ".Name: " + familyName.get(i) + "\r\n";
+      temp = temp + "Street Adress: " + streetAddress.get(i) + "\r\n";      
+      temp = temp + cityStateZip.get(i) + "\r\n";
+      temp = temp + "Phone Number: " + phoneNumber.get(i) + "\r\n";
+      temp = temp + "Email: " + email.get(i) + "\r\n\r\n";
       
-     out.close();
+//      out.printf(i + 1 + ".Name: " + familyName.get(i));
+//      out.println();
+//      out.printf("Street Adress: " + streetAddress.get(i));
+//      out.println();
+//      out.printf(cityStateZip.get(i));
+//      out.println();
+//      out.printf("Phone Number: " + phoneNumber.get(i));
+//      out.println();
+//      out.printf("Email: " + email.get(i));
+//      out.println();
     }
+     out.printf(temp);
+     out.close();
+     
+    
    
   }
  
@@ -49,19 +57,20 @@ public class AddressDirectory
     
     //This is the Loop that takes all the inputs for contacts
     
-    while (size >= 0)
+    while (size > 0)
     {
       System.out.println("Please enter the name of the Contact: ");
-      familyName.add(in.next());
+      in.nextLine();
+      familyName.add(in.nextLine()); 
       System.out.println("Please enter the street address: ");
-      streetAddress.add(in.next());
+      streetAddress.add(in.nextLine());
       System.out.println("Please enter the City, State and Zip code");
       System.out.println("Example: Oxford OH, 11100");
-      cityStateZip.add(in.next());
+      cityStateZip.add(in.nextLine());
       System.out.println("Please enter the phone number: ");
-      phoneNumber.add(in.next());
+      phoneNumber.add(in.nextLine());
       System.out.println("Please enter the email address");
-      email.add(in.next());
+      email.add(in.nextLine());
       
       size--;
     }
