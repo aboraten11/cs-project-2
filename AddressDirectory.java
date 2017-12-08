@@ -1,3 +1,5 @@
+//Austin Boraten CSE 174 Hb final programing project Dec/7/17
+
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -48,6 +50,7 @@ public class AddressDirectory
     
     System.out.print("Please enter how many contacts you want in your Directory: ");
     int size = in.nextInt();
+    in.close();
     
     ArrayList<String> familyName = new ArrayList<String>();
     ArrayList<String> streetAddress = new ArrayList<String>();
@@ -59,28 +62,30 @@ public class AddressDirectory
     
     while (size > 0)
     {
+
+      Scanner input = new Scanner(System.in);
       System.out.println("Please enter the name of the Contact: ");
-      in.nextLine();
-      familyName.add(in.nextLine()); 
+   
+      familyName.add(input.nextLine()); 
       System.out.println("Please enter the street address: ");
-      streetAddress.add(in.nextLine());
+      streetAddress.add(input.nextLine());
       System.out.println("Please enter the City, State and Zip code");
       System.out.println("Example: Oxford OH, 11100");
-      cityStateZip.add(in.nextLine());
+      cityStateZip.add(input.nextLine());
       System.out.println("Please enter the phone number: ");
-      phoneNumber.add(in.nextLine());
+      phoneNumber.add(input.nextLine());
       System.out.println("Please enter the email address");
-      email.add(in.nextLine());
+      email.add(input.nextLine());
       
       size--;
     }
-    
+   
     PrintContacts(out ,familyName, streetAddress, cityStateZip, phoneNumber, email);
     
     in.close();
-
-  }
 }
+}
+
     
     
     
